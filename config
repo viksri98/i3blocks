@@ -1,0 +1,51 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+#[documentation]
+#full_text=Documentation
+#website=https://vivien.github.io/i3blocks
+#command=xdg-open "$website"
+#color=#f12711
+
+#[greetings]
+#color=#f5af19
+#command=echo "Hello, $USER!"
+#interval=once
+
+[memory]
+interval=36000
+command=./storage.sh
+
+[weather]
+interval=7200
+command=./weather.sh
+
+[rain]
+interval=30
+command=if [ $button ]; then mpv --loop-file=inf https://radar.weather.gov/ridge/lite/KSOX_loop.gif; else ./rain.sh weather.txt; fi
+
+[temperature]
+interval=30
+command=if [ $button ]; then i3-sensible-terminal -e bash -c "curl wttr.in; read"; else ./temp.sh weather.txt; fi
+
+[network]
+interval=60
+command=./net.sh
+
+[battery]
+interval=10
+command=./battery.sh
+
+
+[time]
+command=date '+%Y-%m-%d %I:%M:%S'
+interval=1
