@@ -16,7 +16,7 @@ Gets the temperature in Fahrenheit, including the real-feel. Colored based on my
 Gets the network and whether it is connected using nmcli
 
 ## storage.sh
-Gets the storage left in /dev/nvme0n1p3, the partition I use for my personal machine. Can be changed trivially.
+Gets the storage left in the first /dev/ partition, the partition I use for my personal machine.
 
 ## config
 The config file for i3blocks, look here for how to use each script.
