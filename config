@@ -30,12 +30,12 @@ interval=7200
 command=./weather.sh
 
 [rain]
-interval=30
-command=if [ $button ]; then mpv --loop-file=inf https://radar.weather.gov/ridge/lite/KSOX_loop.gif; else ./rain.sh weather.txt; fi
+interval=10
+command=if [ $button ]; then mpv --loop-file=inf https://radar.weather.gov/ridge/lite/KSOX_loop.gif; else ./rain.sh ~/.local/i3blocks/weather.txt; fi
 
 [temperature]
-interval=30
-command=if [ $button ]; then i3-sensible-terminal -e bash -c "curl wttr.in; read"; else ./temp.sh weather.txt; fi
+interval=10
+command=if [ $button ]; then i3-sensible-terminal -e bash -c "curl wttr.in; read"; else ./temp.sh ~/.local/i3blocks/weather.txt; fi
 
 [network]
 interval=60
