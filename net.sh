@@ -8,5 +8,5 @@ text=$(nmcli device | sed -n '2p' | awk '{print "📶: "$4" "$3}')
 echo $text
 echo
 
-[ $(awk '{print $3}' <<< $text) == "connected" ] && echo $GREEN && exit 0
+[ $(awk '{print $3}' <<< $text) = "connected" ] && echo $GREEN && exit 0
 echo $RED && exit 0

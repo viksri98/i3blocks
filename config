@@ -11,7 +11,8 @@ separator=true
 seperator_block_width=15
 
 # Variables SET THESE BEFORE RUNNING ON YOUR MACHINE
-
+BATTERY=BAT0
+ROOT=/
 
 #[documentation]
 #full_text=Documentation
@@ -26,7 +27,7 @@ seperator_block_width=15
 
 [root memory]
 interval=36000
-command=./storage.sh /
+command=./storage.sh $ROOT 
 
 [weather]
 interval=10
@@ -38,7 +39,7 @@ command=./net.sh
 
 [battery]
 interval=10
-command=./battery.sh
+command=./battery.sh $BATTERY
 
 
 [time]

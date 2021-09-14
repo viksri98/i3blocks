@@ -6,9 +6,9 @@ ORANGE="#FF8000"
 GREEN="#00FF00"
 
 #Get data
-if [ ! -d /sys/class/power_supply/BAT0 ]; then exit 0; fi
-CHARGE=$(cat /sys/class/power_supply/BAT0/capacity)
-STATUS=$(cat /sys/class/power_supply/BAT0/status)
+if [ ! -d /sys/class/power_supply/$1 ]; then exit 0; fi
+CHARGE=$(cat /sys/class/power_supply/$1/capacity)
+STATUS=$(cat /sys/class/power_supply/$1/status)
 
 #Output
 [ $STATUS = "Discharging" ] && EMOJI=🔋 || EMOJI=🔌
