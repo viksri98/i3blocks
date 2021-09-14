@@ -2,7 +2,7 @@
 
 ## battery.sh
 This script returns the battery level as a 2 digit number using BAT0 only. Does not display any battery percentage if no battery is connected.  
-🔋 means that the computer is operating on battery power
+🔋 means that the computer is operating on battery power  
 🔌 means that the computer is charging
 
 ## weather.sh
