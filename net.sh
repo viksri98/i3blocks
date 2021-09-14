@@ -4,7 +4,7 @@
 RED="#FF0000"
 GREEN="#00FF00"
 
-text=$(nmcli device | sed -n '2p' | awk '{print "Network: "$4" "$3}')
+text=$(nmcli device | sed -n '2p' | awk '{print "📶: "$4" "$3}')
 echo $text
 echo
 

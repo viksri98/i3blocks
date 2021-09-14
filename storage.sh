@@ -1,3 +1,3 @@
 #!/bin/sh
 
-echo "Available: $( df -h | sed -n '/^[/]dev/p' | awk '{print $4}')"
+echo "💽: $( df -h $1 | awk '{print $4}' | tail -1)"

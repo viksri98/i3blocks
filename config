@@ -8,7 +8,10 @@
 
 # Global properties
 separator=true
-separator_block_width=15
+seperator_block_width=15
+
+# Variables SET THESE BEFORE RUNNING ON YOUR MACHINE
+
 
 #[documentation]
 #full_text=Documentation
@@ -21,21 +24,13 @@ separator_block_width=15
 #command=echo "Hello, $USER!"
 #interval=once
 
-[memory]
+[root memory]
 interval=36000
-command=./storage.sh
+command=./storage.sh /
 
 [weather]
-interval=7200
-command=./weather.sh
-
-[rain]
 interval=10
-command=if [ $button ]; then mpv --loop-file=inf https://radar.weather.gov/ridge/lite/KSOX_loop.gif; else ./rain.sh ~/.local/i3blocks/weather.txt; fi
-
-[temperature]
-interval=10
-command=if [ $button ]; then i3-sensible-terminal -e bash -c "curl wttr.in; read"; else ./temp.sh ~/.local/i3blocks/weather.txt; fi
+command=[ $button ] && i3-sensible-terminal -e bash -c "curl wttr.in; read" || ./weather.sh
 
 [network]
 interval=60

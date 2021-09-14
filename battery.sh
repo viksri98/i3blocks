@@ -7,14 +7,12 @@ GREEN="#00FF00"
 
 #Get data
 if [ ! -d /sys/class/power_supply/BAT0 ]; then exit 0; fi
-BAT=$(cat /sys/class/power_supply/BAT0/charge_now)
-FULL=$(cat /sys/class/power_supply/BAT0/charge_full)
-
-#Calculations
-CHARGE=`echo "($BAT / $FULL) * 100" | bc -l` 
-CHARGE=$( sed -n 's/[.].*//p' <<< $CHARGE )
+CHARGE=$(cat /sys/class/power_supply/BAT0/capacity)
+STATUS=$(cat /sys/class/power_supply/BAT0/status)
 
 #Output
-[ $CHARGE -lt 15 ] && printf "BATTERY: $CHARGE\n\n$RED\n" && exit 0
-[ $CHARGE -lt 25 ] && printf "Battery: $CHARGE\n\n$ORANGE\n" && exit 0
-printf "Battery: $CHARGE\n\n$GREEN\n" && exit 0
+[ $STATUS = "Discharging" ] && EMOJI=🔋 || EMOJI=🔌
+[ $CHARGE -lt 15 ] && echo -n "$EMOJI: $CHARGE\n\n$RED\n" && exit 0
+[ $CHARGE -lt 25 ] && echo -n "$EMOJI: $CHARGE\n\n$ORANGE\n" && exit 0
+printf "$EMOJI: $CHARGE\n\n$GREEN\n" && exit 0
+
