@@ -6,7 +6,7 @@ ORANGE="#FF8000"
 GREEN="#00FF00"
 
 #Get data
-if [ ! -d /sys/class/power_supply/$1 ]; then exit 0; fi
+[ -d /sys/class/power_supply/$1 ] || exit 0
 CHARGE=$(cat /sys/class/power_supply/$1/capacity)
 STATUS=$(cat /sys/class/power_supply/$1/status)
 
