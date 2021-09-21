@@ -26,7 +26,7 @@ ROOT=/
 #interval=once
 
 [volume]
-interval=10
+interval=3
 command=./volume.sh
 
 [root memory]
