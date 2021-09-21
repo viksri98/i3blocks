@@ -25,6 +25,10 @@ ROOT=/
 #command=echo "Hello, $USER!"
 #interval=once
 
+[volume]
+interval=10
+command=./volume.sh
+
 [root memory]
 interval=36000
 command=./storage.sh $ROOT 
