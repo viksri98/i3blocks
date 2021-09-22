@@ -12,7 +12,7 @@ STATUS=$(cat /sys/class/power_supply/$1/status)
 
 #Output
 [ $STATUS = "Discharging" ] && EMOJI=🔋 || EMOJI=🔌
-[ $CHARGE -lt 15 ] && echo -n "$EMOJI: $CHARGE\n\n$RED\n" && exit 0
-[ $CHARGE -lt 25 ] && echo -n "$EMOJI: $CHARGE\n\n$ORANGE\n" && exit 0
-printf "$EMOJI: $CHARGE\n\n$GREEN\n" && exit 0
+[ $CHARGE -lt 15 ] && printf "$EMOJI: $CHARGE\n\n$RED\n" && exit 0
+[ $CHARGE -lt 25 ] && printf "$EMOJI: $CHARGE\n\n$ORANGE\n" && exit 0
+printf "$EMOJI: $CHARGE\n\n$GREEN" && exit 0
 
