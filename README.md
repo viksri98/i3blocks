@@ -16,5 +16,8 @@ Gets the network and whether it is connected using nmcli
 Gets the storage left in the partition specified, by default the root (/) directory  
 USAGE: `./storage.sh $DIRECTORY`
 
+## volume.sh
+Gets the volume as a percentage using amixer
+
 ## config
 The config file for i3blocks, look here for how to use each script.
