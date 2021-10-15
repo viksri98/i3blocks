@@ -17,7 +17,7 @@ Gets the storage left in the partition specified, by default the root (/) direct
 USAGE: `./storage.sh $DIRECTORY`
 
 ## volume.sh
-Gets the volume as a percentage using amixer
+Gets the volume as a percentage using amixer (CURRENTLY BROKEN)
 
 ## config
 The config file for i3blocks, look here for how to use each script.
