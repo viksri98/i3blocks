@@ -13,6 +13,8 @@ DATA=$(curl -Ss wttr.in/?format="%t(%f)|%c\n" | sed 's/°F//g')
 TEMP=$(awk -F '|' '{print $1}' <<< $DATA)
 EMOJI=$(awk -F '|' '{print $2}' <<< $DATA)
 
+[ "$(sed -n '3p' <<< $DATA)" != "" ] && exit 0
+
 #Outputs
 echo $EMOJI:$TEMP°F
 echo
