@@ -29,6 +29,10 @@ ROOT=/
 interval=3
 command=./volume.sh
 
+[ram]
+interval=10
+command=./ram.sh
+
 [root memory]
 interval=36000
 command=./storage.sh $ROOT 

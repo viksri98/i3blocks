@@ -19,5 +19,8 @@ USAGE: `./storage.sh $DIRECTORY`
 ## volume.sh
 Gets the volume as a percentage using amixer (CURRENTLY BROKEN)
 
+## ram.sh
+Gets the free memory using free
+
 ## config
 The config file for i3blocks, look here for how to use each script.
