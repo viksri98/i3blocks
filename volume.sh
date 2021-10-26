@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "🔉$( amixer | sed -n 's/[]].*//;s/.*[[]//;5p' )"
+echo "🔉$( amixer sget Master | sed -n '/^ *Front Left/p' | sed -n 's/[]].*//;s/.*[[]//p' )"
